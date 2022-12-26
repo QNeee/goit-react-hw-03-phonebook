@@ -43,7 +43,7 @@ class App extends Component {
     localStorage.removeItem(this.KEY);
     localStorage.setItem(this.KEY, JSON.stringify(this.state.contacts));
   }
-  change = (value) => {
+  onChangeFilter = (value) => {
     this.setState({
       filter: value
     })
@@ -79,8 +79,8 @@ class App extends Component {
       <Title>Phonebook</Title>
       <Form onSubmit={this.formSubmitHander} />
       <Title>Contacts</Title>
-      <Filter value={filter} change={this.change} />
-      <ContactList options={this.getFilteredContacts()} deleteContact={this.onDelete} />
+      <Filter value={filter} change={this.onChangeFilter} />
+      <ContactList contacts={this.getFilteredContacts()} deleteContact={this.onDelete} />
     </Container >)
 
   }
