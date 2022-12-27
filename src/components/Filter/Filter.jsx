@@ -8,6 +8,6 @@ export const Filter = ({ value, change }) => {
 }
 
 Filter.propTypes = {
-    value: PropTypes.string,
-    change: PropTypes.func
+    value: PropTypes.string.isRequired,
+    change: PropTypes.func.isRequired
 }

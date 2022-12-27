@@ -14,7 +14,6 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    status: '',
   }
   formSubmitHander = (data) => {
     const { contacts } = this.state;
@@ -57,7 +56,6 @@ class App extends Component {
     const toLocal = this.state.contacts.map(item => item);
     const stringify = JSON.stringify(toLocal);
     if (this.state.filter.length === 0) {
-      localStorage.removeItem(this.KEY);
       localStorage.setItem(this.KEY, stringify);
     }
 
